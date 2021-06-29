@@ -1,0 +1,43 @@
+<h1>Show Center</h1>
+
+<ul>
+
+  <li>
+    <strong>避難所 名称:</strong>
+    <%= @center.避難所_名称 %>
+  </li>
+
+  <li>
+    <strong>地方公共団体コード:</strong>
+    <%= @center.地方公共団体コード %>
+  </li>
+
+  <li>
+    <strong>都道府県:</strong>
+    <%= @center.都道府県 %>
+  </li>
+
+  <li>
+    <strong>指定区市町村名:</strong>
+    <%= @center.指定区市町村名 %>
+  </li>
+
+  <li>
+    <strong>住所:</strong>
+    <%= @center.住所 %>
+  </li>
+
+  <li>
+    <strong>緯度:</strong>
+    <%= @center.緯度 %>
+  </li>
+
+  <li>
+    <strong>経度:</strong>
+    <%= @center.経度 %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.center_path(@conn, :edit, @center) %></span>
+<span><%= link "Back", to: Routes.center_path(@conn, :index) %></span>

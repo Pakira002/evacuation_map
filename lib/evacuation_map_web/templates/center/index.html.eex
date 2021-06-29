@@ -1,0 +1,38 @@
+<h1>Listing Centers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>避難所 名称</th>
+      <th>地方公共団体コード</th>
+      <th>都道府県</th>
+      <th>指定区市町村名</th>
+      <th>住所</th>
+      <th>緯度</th>
+      <th>経度</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for center <- @centers do %>
+    <tr>
+      <td><%= center.避難所_名称 %></td>
+      <td><%= center.地方公共団体コード %></td>
+      <td><%= center.都道府県 %></td>
+      <td><%= center.指定区市町村名 %></td>
+      <td><%= center.住所 %></td>
+      <td><%= center.緯度 %></td>
+      <td><%= center.経度 %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.center_path(@conn, :show, center) %></span>
+        <span><%= link "Edit", to: Routes.center_path(@conn, :edit, center) %></span>
+        <span><%= link "Delete", to: Routes.center_path(@conn, :delete, center), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Center", to: Routes.center_path(@conn, :new) %></span>
